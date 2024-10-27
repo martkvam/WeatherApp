@@ -1,11 +1,12 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
+
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function HomeScreen() {
+export default function SearchScreen() {
   return (
     <SafeAreaView>
       <View style={styles.titleContainer}>
-        <Text>Her kommer appen</Text>
+        <Text>Her kommer søk</Text>
       </View>
     </SafeAreaView>
   );
@@ -14,7 +15,6 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: "row",
-    alignItems: "center",
     gap: 8,
   },
 });
