@@ -9,14 +9,20 @@ export default function HomeScreen() {
   return (
     <SafeAreaView>
       <View style={styles.container}>
-        {locations?.map((coordinates) => {
+        {locations?.map((coordinates, index) => {
           return (
-            <Link href="/details" asChild key={coordinates.lat}>
+            <Link
+              href={{
+                pathname: "/details",
+                params: {
+                  name: coordinates.name,
+                },
+              }}
+              asChild
+              key={index}
+            >
               <Pressable>
-                <WeatherWidget
-                  latitude={coordinates.lat}
-                  longitude={coordinates.long}
-                />
+                <WeatherWidget coordinates={coordinates} />
               </Pressable>
             </Link>
           );
