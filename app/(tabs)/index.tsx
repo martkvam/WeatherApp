@@ -2,12 +2,14 @@ import { Link } from "expo-router";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import WeatherWidget from "@/components/WeatherWidget";
-import useLocations from "@/hooks/useLocations";
+import { useLocations } from "@/hooks/useLocations";
+import { useEffect } from "react";
 
 export default function HomeScreen() {
   const locations = useLocations();
+
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.background}>
       <View style={styles.container}>
         {locations?.map((coordinates, index) => {
           return (
@@ -16,6 +18,8 @@ export default function HomeScreen() {
                 pathname: "/details",
                 params: {
                   name: coordinates.name,
+                  latitude: coordinates.lat,
+                  longitude: coordinates.long,
                 },
               }}
               asChild
@@ -33,6 +37,10 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  background: {
+    height: "100%",
+    backgroundColor: "white",
+  },
   container: {
     flexDirection: "column",
     alignItems: "center",
