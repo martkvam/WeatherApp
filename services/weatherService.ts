@@ -1,17 +1,20 @@
-import { apiClient } from "@/api/client";
+import { weatherApiClient } from "@/api/client";
 import { WeatherDetails } from "@/types/weatherDetails";
 
-export default async function getWeatherForLocation(lat: number, long: number){
+export const getWeatherForLocation = async (lat: number, long: number) => {
     try {
-        const res = await apiClient.get<WeatherDetails>("", {
+        const res = await weatherApiClient.get<WeatherDetails>("", {
             params: {
                 lat: lat,
                 lon: long
+            },
+            headers: {
+                "User-Agent": "WeatherApp/1.0.0 CFNetwork/975.0.3 Darwin/17.7.0"
             }
         });
-        const weatherDetails = res.data as WeatherDetails;
-        return weatherDetails;
+        return res.data as WeatherDetails;
     } catch (err){
         console.error(err);
+        throw err; //For useQuery to return error message
     }
 }
