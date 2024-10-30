@@ -28,7 +28,7 @@ In the output, you'll find options to open the app in a
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
 - [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-##My approach:
+## My approach:
 
 My ambition was to create a home screen, a details screen and a search screen where users could search for a city and add it to their dashboard. In the end I did not have time to implement the search functionality...
 
@@ -42,7 +42,7 @@ I then implemented the hook in the widgets and details screen to show the correc
 
 At the end I implemented some simple unit tests.
 
-##What I would improve:
+## What I would improve:
 
 The main thing I would improve is the testing. I started with the tests very late, and should probably have spent more time on research and writing better and more extensive tests.
 
