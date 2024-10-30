@@ -6,7 +6,7 @@ export default function SearchScreen() {
   return (
     <SafeAreaView>
       <View style={styles.titleContainer}>
-        <Text>Her kommer søk</Text>
+        <Text>Search not implemented yet..</Text>
       </View>
     </SafeAreaView>
   );
